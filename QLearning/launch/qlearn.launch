@@ -1,7 +1,11 @@
 <launch>
 
-    <include file="$(find turtlebot3_gazebo)/launch/turtlebot_world.launch">
+    <!-- <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
         <arg name="world_file" value="$(find qlearning)/environment/god.world"/>
+    </include> -->
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find qlearning)/environment/god.world"/>
     </include>
 
     <arg name = "rosbagEnable" default= "false" />
