@@ -60,6 +60,9 @@ Install Dependencies
 rosdep install --from-paths src -y --ignore-src
 ```
 
+Follow these instructions if having issues with installing Turtlebot3 and its dependencies:
+https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
+
 ## Test
 To run test
 ```
