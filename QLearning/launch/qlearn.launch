@@ -1,0 +1,28 @@
+<launch>
+
+    <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+        <arg name="world_file" value="$(find qlearning)/environment/god.world"/>
+    </include>
+
+    <arg name = "rosbagEnable" default= "false" />
+
+    <node
+        pkg="qlearning"
+        name="qlearn"
+        type="qlearn"
+        output="screen"
+    />
+
+    <node
+        pkg="rosbag"
+        name="record"
+        type="record"
+        args="-a -x /camera/(.*) -O $(find qlearning)/results/roombatopics.bag"
+        if="$(arg rosbagEnable)"
+    />
+
+</launch>
+
+
+
+

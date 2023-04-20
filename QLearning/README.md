@@ -1,6 +1,3 @@
-# ENPM690_FinalProject
-ENPM690 UMD-CP Spring 2023; Final Project; Machine Learning; 
-
 
 ## Overview
 
@@ -56,6 +53,11 @@ cd src
 paste this folder in src
 cd ..
 catkin_make
+```
+
+Install Dependencies
+```
+rosdep install --from-paths src -y --ignore-src
 ```
 
 ## Test

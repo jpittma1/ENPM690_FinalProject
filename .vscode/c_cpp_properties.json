@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/jerry/ariac_ws/install/test_competitor/include/**",
+        "/home/jerry/ariac_ws/install/group1_interfaces/include/**",
+        "/home/jerry/ariac_ws/install/group1/include/**",
+        "/home/jerry/ariac_ws/install/competitor_interfaces/include/**",
+        "/home/jerry/ariac_ws/install/ariac_sensors/include/**",
+        "/home/jerry/ariac_ws/install/ariac_plugins/include/**",
+        "/home/jerry/ariac_ws/install/ariac_msgs/include/**",
+        "/opt/ros/galactic/include/**",
+        "/home/jerry/enpm690_ws/src/ENPM690_FinalProject/QLearning/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
