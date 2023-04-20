@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>qlearning</name>
-  <version>0.0.0</version>
-  <description>The QLearning-ENPM808X package</description>
+  <version>1.0.0</version>
+  <description>The QLearning-ENPM690 package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="sarul1@umd.terpmail.edu">Senthil Hariharan Arul</maintainer>
+  <maintainer email="mkulk98@umd.edu">Maitreya Ravindra Kulkarni</maintainer>
+  <maintainer email="jpittma1@umd.edu">Jerry Pittman, Jr.</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -27,8 +28,6 @@
   <!-- Example: -->
   <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
 
-
-  <!-- The *depend tags are used to specify dependencies -->
   <buildtool_depend>catkin</buildtool_depend>
 
   <build_depend>roscpp</build_depend>
