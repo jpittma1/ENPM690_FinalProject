@@ -95,6 +95,7 @@ Gazebo opens up and terminal provides two options:
 Please press 1 and click enter if you want to train.
 The programs will ask you to enter the full path of the .csv file you want to store
 the final qtable. If the .csv file doesnt exist it will be created or else it will be overwritten.
+Ex: "/home/jerry/enpm690_ws/src/ENPM690_FinalProject/QLearning/qtable/god_1451.csv"
 
 Now the gazebo simulation will show the turtlebot trying to navigate. The terminal will show
 the episode count, cumulative reward and current epsilon value.
