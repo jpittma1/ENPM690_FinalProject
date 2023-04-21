@@ -53,7 +53,7 @@ cd ~/catkin_ws/
 catkin_make
 source devel/setup.bash
 cd src
-paste this folder in src
+git clone https://github.com/jpittma1/ENPM690_FinalProject.git
 cd ..
 catkin_make
 ```

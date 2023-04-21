@@ -60,6 +60,9 @@ Install Dependencies
 rosdep install --from-paths src -y --ignore-src
 ```
 
+For how to install Turtlebot on Noetic:
+https://github.com/hanruihua/Turtlebot2_on_Noetic
+
 Follow these instructions if having issues with installing Turtlebot3 and its dependencies:
 https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 
