@@ -147,6 +147,7 @@ void Qlearning::loadQtable(std::string path) {
     if (file.good()) {
         ROS_INFO("File loaded");
         int rowCount = 0;
+        // TODO: Troubleshoot bad::alloc
         while (std::getline(file, row)) {
             int columnCount = 0;
             std::stringstream linestream(row);

@@ -78,13 +78,21 @@ To run the demo
 ```
 cd ~/catkin_ws/
 source devel/setup.bash
+```
+
+Then run one of these (one of these works for Maitreya and one works for Jerry)
+```
 roslaunch qlearning qlearn.launch
+```
+
+```
+roslaunch qlearning qlearn2.launch
 ```
 Gazebo opens up and terminal provides two options:
 1. Train Qtable
 2. Test Qtable
 
-Please present 1 and click enter if you want to train.
+Please press 1 and click enter if you want to train.
 The programs will ask you to enter the full path of the .csv file you want to store
 the final qtable. If the .csv file doesnt exist it will be created or else it will be overwritten.
 
