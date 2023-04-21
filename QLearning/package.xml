@@ -29,6 +29,7 @@
   <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
 
   <buildtool_depend>catkin</buildtool_depend>
+  <depend>gazebo_ros</depend>
 
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
@@ -58,6 +59,9 @@
   <exec_depend>message_runtime</exec_depend>
   <exec_depend>std_srvs</exec_depend>
   <exec_depend>rostest</exec_depend>
+  
+  <exec_depend>gazebo</exec_depend>
+  <exec_depend>turtlebot3_description</exec_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
