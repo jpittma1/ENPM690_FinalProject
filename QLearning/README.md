@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/senthilarul/QLearning-ENPM808X.svg?branch=master)](https://travis-ci.org/senthilarul/QLearning-ENPM808X)
+
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+# Qlearning-ENPM8690 Final Project
 
 ## Overview
 
@@ -7,11 +12,37 @@ When a robot is in an unexplored environment, it does not know the set of best a
 
 This project will implement a Qlerning algorithm for training a turtlebot to navigate inside a maze (created on gazebo) by avoiding obstacles. The project will show working of the algorithm by using a demo that shows the turtlebot navigating inside the maze without colliding. 
 
+## Documents
+
+The presentation is available at
+https://docs.google.com/a/terpmail.umd.edu/presentation/d/1lY7BPjBClKzbS0OSACnfaRXx3JjSwh2sVAP6EU-dcpY/edit?usp=sharing
+
+Full video (Presentation + Installation + Demostration of training and testing):
+https://www.youtube.com/watch?v=qiqZj9iZp64
+
+
+The full video has been split into presentation and demonstration:
+
+Presentation part alone can be viewed here:
+https://www.youtube.com/watch?v=k43GkDqWK9E
+
+Demonstration part can be viewed here:
+https://www.youtube.com/watch?v=CnOc-quSAEc
+
+## SIP
+
+For public viewing without signing in:
+The product backlog file can be accessed at:
+https://docs.google.com/spreadsheets/d/1vrFUu7iHakTf7QKsV2FyB1mgLVpWevoV3XNpDwdl3Bk/edit?usp=sharing
+
+For public viewing without signing in:
+The Sprint planning and review document can be accessed at:
+https://docs.google.com/document/d/1hIBBBdsKGOwzNdXM68WiSKR9ENO5S5oQ6Tx5qm4As6w/edit?usp=sharing
 
 ## LICENSE
 
 ```
-Copyright (c) 2023, Jerry Pittman, Jr., Maitreya Kulkarni
+Copyright (c) 2017, Senthil Hariharan Arul
  
 Redistribution and use in source and binary forms, with or without  
 modification, are permitted provided that the following conditions are 
@@ -45,26 +76,15 @@ THE POSSIBILITY OF SUCH DAMAGE.
 ## How to Build
 Follow the following steps to build the package
 ```
-mkdir -p ~/catkin_ws/src
+cd mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
 source devel/setup.bash
 cd src
-paste this folder in src
+git clone https://github.com/jpittma1/ENPM690_FinalProject.git
 cd ..
 catkin_make
 ```
-
-Install Dependencies
-```
-rosdep install --from-paths src -y --ignore-src
-```
-
-For how to install Turtlebot on Noetic:
-https://github.com/hanruihua/Turtlebot2_on_Noetic
-
-Follow these instructions if having issues with installing Turtlebot3 and its dependencies:
-https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
 
 ## Test
 To run test
@@ -78,24 +98,15 @@ To run the demo
 ```
 cd ~/catkin_ws/
 source devel/setup.bash
-```
-
-Then run one of these (one of these works for Maitreya and one works for Jerry)
-```
 roslaunch qlearning qlearn.launch
-```
-
-```
-roslaunch qlearning qlearn2.launch
 ```
 Gazebo opens up and terminal provides two options:
 1. Train Qtable
 2. Test Qtable
 
-Please press 1 and click enter if you want to train.
+Please present 1 and click enter if you want to train.
 The programs will ask you to enter the full path of the .csv file you want to store
 the final qtable. If the .csv file doesnt exist it will be created or else it will be overwritten.
-Ex: "/home/jerry/enpm690_ws/src/ENPM690_FinalProject/QLearning/qtable/god_1451.csv"
 
 Now the gazebo simulation will show the turtlebot trying to navigate. The terminal will show
 the episode count, cumulative reward and current epsilon value.
@@ -103,12 +114,48 @@ Please press ctrl + c to exit from training, the qtable (.csv) file will be save
 
 Now rerun the program and select 2 and press enter for testing the trained qtable.
 The program will ask you to specify the full path of the trained qtable(.csv) file.
-There are two files in this package namely "god_259.csv" and "god_1451.csv" (both available in the qtable folder). The numbers in the file names indicate the number of episodes they have been trained (higher the better). Enter the
-full path of the "god_1451.csv" file and press enter. The turtlebot should navigate without colliding
+There are two files in this package namely "god_259.csv" and "god_1451.csv" (both available in the qtable folder). The numbers in the file names indicate the number of episodes they have been trained (higher the better). 
+Enter the full path of the "god_1451.csv" file and press enter (i.e.: "/home/jerry/catkin_ws/src/QLearning/qtable/god_1451.csv"). 
+
+The turtlebot should navigate without colliding
 and complete the maze. Press ctrl + c to exit.
 
+Please follow the video for running the demo and installation of package.
 
+## Record Rosbag
+```
+cd ~/catkin_ws
+source devel/setup.bash
+roslaunch qlearning qlearn.launch rosbagEnable:=true
+```
+For playing the bag file open a new terminal and type
+```
+roscore
+```
+open another terminal and type
+```
+cd ~/catkin_ws/src/QLearning-ENPM808X/results
+rosbag play roombatopics.bag
+```
 
+## Doxygen
+To install Doxygen
+```
+sudo apt install doxygen
+```
+once the installation is over we can generate the Doxygen documentation by running
+```
+doxygen ./Doxygen
+```
+
+## Dependencies
+ROS Kinetic
+Gazebo 7.9
+turtlebot_gazebo package
+RViz
+Catkin
+
+And created using C++ on a Ubuntu 16.04 LTS machine.
 
 
 ## Known Issues/bugs
@@ -117,3 +164,23 @@ This is not a deficiency in the algorithm but in the sensor.
 A modification to a sensor with a higher angular range such as Hokuyo would solve the isse.
 
 Sometimes the path entry for qtable during the testing doesnt work (It happens when the computer is underheavy load, for me it happens while running the program while rendering video files). Please fill in the full path in the program (qlearning class->loadQtable function instead of "path" variable)
+
+## Coverage
+Install lcov
+```
+sudo apt-get install lcov
+```
+To check coverage:
+```
+cd ~/catkin_ws/build
+lcov --directory . --capture --output-file coverage.info
+lcov --remove coverage.info '/opt/*' '/usr/*' '*/devel/*' '*test_*' '*_test*' --output-file coverage.info
+lcov --list coverage.info
+```
+The coverage output is given as a screenshot in the results folder.
+It gave a coverage of 95.9%.
+
+## About Me
+
+I am Senthil, a graduate student at the University of Maryland, College Park.
+I major in Systems Engineering with a specialization in Robotics. I am passionate about Robotics and software development, especially in the field of Artificial Intelligence.
